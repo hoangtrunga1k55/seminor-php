@@ -4,19 +4,20 @@ class diengia{
         $conn = DB_Connection::connectDb();
         $sql = "SELECT id,ten,img,chucvu,mota FROM diengia";
         $ls = $conn->query($sql);
-//        $db->disconnect();
         return $ls->fetch_all();
     }
 
     public function createDienGia($data) {
         $conn = DB_Connection::connectDb();
         $ten = $data['ten'];
-        $img = $data['img'];
+        $img = "img/".$_FILES["img"]["name"];
         $chucvu = $data['chucvu'];
         $mota = $data['mota'];
-        $sql = "INSERT INTO `diengia`(`id`, `ten`, `img`,`chucvu`,`mota`) 
+        $sql = "INSERT INTO `diengia`(`id`, `ten`, `img`,`chucvu`,`mota`)
 						VALUES (null,'$ten','$img','$chucvu','$mota')";
-        return $conn->query($sql)->fetch_all();
+        $conn->query($sql);
+        $last_id = $conn->insert_id;
+        echo json_encode($this->getEditDG($last_id));
     }
 
     public function deleteDG($data){
@@ -32,5 +33,28 @@ class diengia{
             $data = ['check'=>false];
             return $data;
         }
+    }
+    public function editUser($data){
+        $conn = DB_Connection::connectDb();
+        $ten = $data['ten'];
+        $img = "img/".$_FILES["img"]["name"];
+        $chucvu = $data['chucvu'];
+        $mota = $data['mota'];
+        $id = $data['id'];
+        if (isset($ten)&&isset($img)&&isset($chucvu)&&isset($mota)){
+            $sql = "UPDATE diengia SET ten = '".$ten."',img = '".$img."',chucvu = '".$chucvu."',mota = '".$mota."'  WHERE id='".$id."'";
+            $lsUsers = mysqli_query($conn,$sql);
+            echo json_encode($this->getEditDG($id));
+
+        }
+        else{
+            return false;
+        }
+    }
+    public function getEditDG($id){
+        $conn = DB_Connection::connectDb();
+        $sql = "SELECT id,ten,img,chucvu,mota FROM diengia WHERE id='".$id."'";
+        $lsUsers = mysqli_query($conn,$sql);
+        return $lsUsers->fetch_row();
     }
 }

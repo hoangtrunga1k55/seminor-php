@@ -156,7 +156,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="index.php" class="brand-link">
       <img src="../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light">AdminLTE 3</span>
@@ -199,23 +199,11 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="user/danhsach.php" class="nav-link">
+                <a href="user/ds.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh sach Nguoi Dung</p>
                 </a>
               </li>
-                <li class="nav-item">
-                    <a href="user/them.php" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Them Nguoi Dung</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="user/sua.php" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Sua Nguoi Dung</p>
-                    </a>
-                </li>
             </ul>
           </li>
             <li class="nav-item has-treeview">
@@ -245,23 +233,12 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="diengia/danhsach.php" class="nav-link">
+                        <a href="diengia/ds.php" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Danh Sách Diên Gỉa</p>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="diengia/them.php" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Thêm Diễn Giar</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="diengia/sua.php" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Sửa Diễn Giả</p>
-                        </a>
-                    </li>
+
                 </ul>
             </li>
             <li class="nav-item has-treeview">
@@ -274,21 +251,9 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="danhgia/danhsach.php" class="nav-link">
+                        <a href="danhgia/ds.php" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Danh Sách Đánh Giá</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="danhgia/them.php" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Thêm Đánh Giá</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="danhgia/sua.php" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Sửa Đánh Giá</p>
                         </a>
                     </li>
                 </ul>
@@ -303,21 +268,9 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="lichhoithao/danhsach.php" class="nav-link">
+                        <a href="lichhoithao/ds.php" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Danh Sách lịch hội thảo</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="lichhoithao/them.php" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Thêm lịch hội thảo</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="lichhoithao/sua.php" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Sửa lịch hội thảo</p>
                         </a>
                     </li>
                 </ul>
@@ -332,21 +285,9 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="chitiet_lichhoithao/danhsach.php" class="nav-link">
+                        <a href="chitiet_lichhoithao/ds.php" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Danh sách chi tiết lịch hội thảo</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="chitiet_lichhoithao/them.php" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Thêm chi tiết lịch hội thảo</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="chitiet_lichhoithao/sua.php" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Sửa Chi tiết lịch hội thảo</p>
                         </a>
                     </li>
                 </ul>

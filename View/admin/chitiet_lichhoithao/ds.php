@@ -1,7 +1,10 @@
 <?php
 $DIR_FILE = '/var/www/project-metting';
+include($DIR_FILE. '/Model/danhgia.php');
 include($DIR_FILE. '/Model/chitiet_lichhoithao.php');
 include($DIR_FILE. '/class/Db.class.php');
+$user = new danhgia();
+$danhgia = $user->getDanhgia();
 $chitiet = new chitiet_lichhoithao();
 $result = $chitiet->getChiTietHoiThao();
 ?>
@@ -76,8 +79,8 @@ $result = $chitiet->getChiTietHoiThao();
                     <a href="#" class="dropdown-item">
                         <!-- Message Start -->
                         <div class="media">
-                            <img src="../dist/img/user1-128x128.jpg" alt="User Avatar"
-                                 class="img-size-50 mr-3 img-circle">
+                            <noidung src="../dist/noidung/user1-128x128.jpg" alt="User Avatar"
+                                 class="noidung-size-50 mr-3 noidung-circle">
                             <div class="media-body">
                                 <h3 class="dropdown-item-title">
                                     Brad Diesel
@@ -93,8 +96,8 @@ $result = $chitiet->getChiTietHoiThao();
                     <a href="#" class="dropdown-item">
                         <!-- Message Start -->
                         <div class="media">
-                            <img src="../dist/img/user8-128x128.jpg" alt="User Avatar"
-                                 class="img-size-50 img-circle mr-3">
+                            <noidung src="../dist/noidung/user8-128x128.jpg" alt="User Avatar"
+                                 class="noidung-size-50 noidung-circle mr-3">
                             <div class="media-body">
                                 <h3 class="dropdown-item-title">
                                     John Pierce
@@ -110,8 +113,8 @@ $result = $chitiet->getChiTietHoiThao();
                     <a href="#" class="dropdown-item">
                         <!-- Message Start -->
                         <div class="media">
-                            <img src="../dist/img/user3-128x128.jpg" alt="User Avatar"
-                                 class="img-size-50 img-circle mr-3">
+                            <noidung src="../dist/noidung/user3-128x128.jpg" alt="User Avatar"
+                                 class="noidung-size-50 noidung-circle mr-3">
                             <div class="media-body">
                                 <h3 class="dropdown-item-title">
                                     Nora Silvester
@@ -166,8 +169,8 @@ $result = $chitiet->getChiTietHoiThao();
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
-        <a href="index3.html" class="brand-link">
-            <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+        <a href="../index.php" class="brand-link">
+            <noidung src="../../dist/noidung/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image noidung-circle elevation-3"
                  style="opacity: .8">
             <span class="brand-text font-weight-light">AdminLTE 3</span>
         </a>
@@ -177,7 +180,7 @@ $result = $chitiet->getChiTietHoiThao();
             <!-- Sidebar user panel (optional) -->
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
-                    <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                    <noidung src="../../dist/noidung/user2-160x160.jpg" class="noidung-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
                     <a href="#" class="d-block">Alexander Pierce</a>
@@ -210,21 +213,9 @@ $result = $chitiet->getChiTietHoiThao();
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../user/danhsach.php" class="nav-link">
+                                <a href="../user/ds.php" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Danh sach Nguoi Dung</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../user/them.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Them Nguoi Dung</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../user/sua.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Sua Nguoi Dung</p>
                                 </a>
                             </li>
                         </ul>
@@ -239,7 +230,7 @@ $result = $chitiet->getChiTietHoiThao();
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../khachhang/danhsach.php" class="nav-link">
+                                <a href="../khachhang/ds.php" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Danh Sach Khach Hang</p>
                                 </a>
@@ -256,21 +247,9 @@ $result = $chitiet->getChiTietHoiThao();
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../diengia/danhsach.php" class="nav-link">
+                                <a href="../diengia/ds.php" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Danh Sách Diên Gỉa</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../diengia/them.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Thêm Diễn Giar</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../diengia/sua.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Sửa Diễn Giả</p>
                                 </a>
                             </li>
                         </ul>
@@ -285,21 +264,9 @@ $result = $chitiet->getChiTietHoiThao();
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../danhgia/danhsach.php" class="nav-link">
+                                <a href="../danhgia/ds.php" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Danh Sách Đánh Giá</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../danhgia/them.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Thêm Đánh Giá</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../danhgia/sua.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Sửa Đánh Giá</p>
                                 </a>
                             </li>
                         </ul>
@@ -314,21 +281,9 @@ $result = $chitiet->getChiTietHoiThao();
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../lichhoithao/danhsach.php" class="nav-link">
+                                <a href="../lichhoithao/ds.php" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Danh Sách lịch hội thảo</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../lichhoithao/them.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Thêm lịch hội thảo</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../lichhoithao/sua.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Sửa lịch hội thảo</p>
                                 </a>
                             </li>
                         </ul>
@@ -343,21 +298,9 @@ $result = $chitiet->getChiTietHoiThao();
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../chitiet_lichhoithao/danhsach.php" class="nav-link">
+                                <a href="../chitiet_lichhoithao/ds.php" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Danh sách chi tiết lịch hội thảo</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../chitiet_lichhoithao/them.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Thêm chi tiết lịch hội thảo</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../chitiet_lichhoithao/sua.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Sửa Chi tiết lịch hội thảo</p>
                                 </a>
                             </li>
                         </ul>
@@ -369,9 +312,9 @@ $result = $chitiet->getChiTietHoiThao();
         <!-- /.sidebar -->
     </aside>
 
-    <!-- Content Wrapper. Contains page content -->
+    <!-- content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
+        <!-- content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
@@ -395,9 +338,9 @@ $result = $chitiet->getChiTietHoiThao();
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
-                            <div class="card-header"><h3 class="card-title">Responsive Hover Table</h3>
+                            <div class="card-header"><h3 class="card-title">Danh Sách Người Dùng</h3>
                                 <div class="card-tools">
-                                    <div class="input-group input-group-sm" style="width: 150px;"><input type="text"
+                                    <div class="input-group input-group-sm" style="width: 150px;"><input id="myInput" type="text"
                                                                                                          name="table_search"
                                                                                                          class="form-control float-right"
                                                                                                          placeholder="Search">
@@ -408,22 +351,22 @@ $result = $chitiet->getChiTietHoiThao();
                                     </div>
                                 </div>
                             </div> <!-- /.card-header -->
-                            <div class="card-body table-responsive p-0">
+                            <div id="target-content" class="card-body table-responsive p-0">
                                 <table class="table table-hover text-nowrap">
                                     <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Tài khoản</th>
-                                        <th>Vai Trò</th>
-                                        <th>Số điện thoại</th>
+                                        <th>Thời Gian</th>
+                                        <th>Nội Dung</th>
+                                        <th>ID Lịch Hội Thảo</th>
                                         <th>Status</th>
                                     </tr>
                                     </thead>
                                     <tbody> <?php
                                     foreach ($result as $row){
-                                        echo "<tr id='row".$row[0]."'> <td>" . $row[0] . "</td> <td>" . $row[1] . "</td> <td>" . $row[3] . "</td> <td>" . $row[4] . "</td> <td><button  type=\"button\" class=\"btn btn-default add\" data-toggle=\"modal\" data-target=\"#modal-default\">Add</button>|
-        <button type=\"button\" class=\"btn btn-default editUser\" data-toggle=\"modal\" data-target=\"#modal-default1\" data-id='".$row[0]."'>Edit</button>
-|<button class='delete btn btn-default' data-id = ".$row[0].">Delete</button></td> </tr>";
+                                        echo "<tr id='row".$row[0]."'> <td>" . $row[0] . "</td> <td>" . $row[1] . "</td> <td>" . $row[2] . "</td> <td>" . $row[3] . "</td> <td><button  type=\"button\" class=\"btn btn-default add\" data-toggle=\"modal\" data-target=\"#modal-default\">Thêm</button>|
+        <button type=\"button\" class=\"btn btn-default editUser\" data-toggle=\"modal\" data-target=\"#modal-default1\" data-id='".$row[0]."'>Sửa</button>
+|<button class='delete btn btn-default' data-id = ".$row[0].">Xóa</button></td> </tr>";
                                     }
                                     ?> </tbody>
                                 </table>
@@ -440,17 +383,13 @@ $result = $chitiet->getChiTietHoiThao();
                             </button>
                         </div>
                         <div class="modal-body">
-                            <input type="text" name="taikhoan" placeholder="nhập tài khoản">
+                            <input type="text" name="thoigian" placeholder="nhập tài khoản">
                         </div>
                         <div class="modal-body">
-                            <input type="password" name="matkhau" placeholder="nhập mật khẩu">
+                            <input type="text" name="noidung" placeholder="nhập hình ảnh">
                         </div>
                         <div class="modal-body">
-                            <label for="vaitro">Nhập Vai trò</label>
-                            <input id="vaitro"  type="checkbox" name="vaitro">
-                        </div>
-                        <div class="modal-body">
-                            <input type="text" name="sdt" placeholder="nhập số điện thoại">
+                            <input type="text" name="id_lichhoithao" placeholder="nhập bình luận">
                         </div>
                         <div class="modal-footer justify-content-between">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -474,18 +413,15 @@ $result = $chitiet->getChiTietHoiThao();
                             <input type="hidden" name="id">
                         </div>
                         <div class="modal-body">
-                            <input type="text" name="taikhoan" placeholder="nhập tài khoản">
+                            <input type="text" name="thoigian" placeholder="nhập tên">
                         </div>
                         <div class="modal-body">
-                            <input type="password" name="matkhau" placeholder="nhập mật khẩu">
+                            <input type="text" name="noidung" placeholder="nhập hình ảnh">
                         </div>
                         <div class="modal-body">
-                            <label for="vaitro">Nhập Vai trò</label>
-                            <input id="vaitro"  type="checkbox" name="vaitro">
+                            <input type="text" name="id_lichhoithao" placeholder="nhập bình luận">
                         </div>
-                        <div class="modal-body">
-                            <input type="text" name="sdt" placeholder="nhập số điện thoại">
-                        </div>
+
                         <div class="modal-footer justify-content-between">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             <button type="button" class="btn btn-primary edit">Save changes</button>
@@ -552,83 +488,79 @@ $result = $chitiet->getChiTietHoiThao();
 </body>
 <script>
     $(document).ready(function () {
-        $(document).on('click', '.delete', function(){
-            var id = $(this).data('id');
-            $clicked_btn = $(this);
-            $.ajax({
-                url: '/project-metting/Controller/Admin/UserController/delete.php?id='+id,
-                type: 'GET',
-                data: {
-                    'delete': 1,
-                    'id': id,
-                },
-                success: function(response){
-                    $clicked_btn.parents("tr").remove();
-                }
+        $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#target-content tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
             });
         });
 
+        $(document).on('click', '.delete', function(){
+            var id = $(this).data('id');
+            var checkstr =  confirm('Bạn có chắc chắn muốn xóa');
+            if (checkstr ==true) {
+                $clicked_btn = $(this);
+                $.ajax({
+                    url: '/project-metting/Controller/Admin/ChiTietController/delete.php?id='+id,
+                    type: 'GET',
+                    data: {
+                        'delete': 1,
+                        'id': id,
+                    },
+                    success: function(response){
+                        $clicked_btn.parents("tr").remove();
+                    }
+                });
+            }
+        });
+
         $(document).on('click', '.btn-primary.add', function(){
-            var taikhoan = $("input[name=taikhoan]").val();
-            var matkhau = $("input[name=matkhau]").val();
-            var vaitro = $("input[name=vaitro]").val();
-            var sdt = $("input[name=sdt]").val();
+            var thoigian = $("input[name=thoigian]").val();
+            var noidung = $("input[name=noidung]").val();
+            var id_lichhoithao = $("input[name=id_lichhoithao]").val();
             $clicked_btn = $(this);
             $.ajax({
-                url: '/project-metting/Controller/Admin/UserController/add.php',
+                url: '/project-metting/Controller/Admin/ChiTietController/add.php',
                 type: 'POST',
                 data: {
-                    'taikhoan': taikhoan,
-                    'matkhau': matkhau,
-                    'vaitro': vaitro,
-                    'sdt': sdt,
+                    'thoigian': thoigian,
+                    'noidung': noidung,
+                    'id_lichhoithao': id_lichhoithao,
                 },
                 success: function(response){
-                    if (vaitro=="on"){
-                        vaitro=1;
-                    }
-                    else {
-                        vaitro =0;
-                    }
+                    console.log(response);
                     $('.modal.fade.show').removeAttr('aria-modal');
                     $('.modal.fade.show').attr('aria-hidden','true');
                     $('.modal.fade.show').removeClass('show');
                     $('body').removeClass('modal-open');
-                    $('tbody').append("<tr id=\"row"+response+"\"'> <td>"+response+"</td> <td>"+taikhoan+"</td> <td>"+vaitro+"</td> <td>"+sdt+"</td> <td><button type=\"button\" class=\"btn btn-default add\" data-toggle=\"modal\" data-target=\"#modal-default\">Add</button>|        <button type=\"button\" class=\"btn btn-default edit\" data-toggle=\"modal\" data-target=\"#modal-default\" data-id=\"6\">Edit</button>|<button class=\"delete btn btn-default\" data-id=\"6\">Delete</button></td> </tr>");
+                    $('tbody').append("<tr id=\"row"+response+"\"'> <td>"+response+"</td> <td>"+thoigian+"</td><td>"+noidung+"</td> <td>"+id_lichhoithao+"</td> <td><button type=\"button\" class=\"btn btn-default add\" data-toggle=\"modal\" data-target=\"#modal-default\">Thêm</button>|        <button type=\"button\" class=\"btn btn-default edit\" data-toggle=\"modal\" data-target=\"#modal-default\" data-id=\"6\">Sửa</button>|<button class=\"delete btn btn-default\" data-id=\"6\">Xóa</button></td> </tr>");
                 }
             });
         });
 
         $(document).on('click', '.btn-primary.edit', function(){
-            var taikhoan = $("#modal-default1 input[name=taikhoan]").val();
-            var matkhau = $("#modal-default1 input[name=matkhau]").val();
-            var vaitro = $("#modal-default1 input[name=vaitro]").val();
-            var sdt = $("#modal-default1 input[name=sdt]").val();
+            var thoigian = $("#modal-default1 input[name=thoigian]").val();
+            var noidung = $("#modal-default1 input[name=noidung]").val();
+            var id_lichhoithao = $("#modal-default1 input[name=id_lichhoithao]").val();
             var id =$("#modal-default1 input[name=id]").val();
             $clicked_btn = $(this);
             $.ajax({
-                url: '/project-metting/Controller/Admin/UserController/editUser.php',
+                url: '/project-metting/Controller/Admin/ChiTietController/editUser.php',
                 type: 'POST',
                 data: {
                     'id':id,
-                    'taikhoan': taikhoan,
-                    'matkhau': matkhau,
-                    'vaitro': vaitro,
-                    'sdt': sdt,
+                    'thoigian': thoigian,
+                    'noidung': noidung,
+                    'id_lichhoithao': id_lichhoithao,
                 },
                 success: function(response){
-                    if (vaitro=="on"){
-                        vaitro=1;
-                    }
-                    else {
-                        vaitro =0;
-                    }
+                    console.log(response);
                     $('.modal.fade.show').removeAttr('aria-modal');
                     $('.modal.fade.show').attr('aria-hidden','true');
                     $('.modal.fade.show').removeClass('show');
                     $('body').removeClass('modal-open');
                     $("#row"+id+"").remove();
-                    $('tbody').append("<tr id=\"row"+id+"\"'> <td>"+id+"</td> <td>"+taikhoan+"</td> <td>"+vaitro+"</td> <td>"+sdt+"</td> <td><button type=\"button\" class=\"btn btn-default add\" data-toggle=\"modal\" data-target=\"#modal-default\">Add</button>|        <button type=\"button\" class=\"btn btn-default edit\" data-toggle=\"modal\" data-target=\"#modal-default\" data-id=\"6\">Edit</button>|<button class=\"delete btn btn-default\" data-id=\"6\">Delete</button></td> </tr>");
+                    $('tbody').append("<tr id=\"row"+id+"\"'> <td>"+id+"</td> <td>"+thoigian+"</td> <td>"+noidung+"</td> <td>"+id_lichhoithao+"</td><td><button type=\"button\" class=\"btn btn-default add\" data-toggle=\"modal\" data-target=\"#modal-default\">Add</button>|        <button type=\"button\" class=\"btn btn-default edit\" data-toggle=\"modal\" data-target=\"#modal-default\" data-id=\"6\">Edit</button>|<button class=\"delete btn btn-default\" data-id=\"6\">Delete</button></td> </tr>");
 
                 }
             });
@@ -636,21 +568,20 @@ $result = $chitiet->getChiTietHoiThao();
 
         $(document).on('click', '.editUser', function(){
             var id = $(this).data('id');
-            $("#modal-default1 input[name=taikhoan]").val(id);
             $clicked_btn = $(this);
             $.ajax({
-                url: '/project-metting/Controller/Admin/UserController/edit.php',
+                url: '/project-metting/Controller/Admin/ChiTietController/edit.php',
                 type: 'GET',
                 data: {
                     'id': id,
                 },
                 success: function(response){
+                    console.log(response);
                     var response = JSON.parse(response);
                     $("#modal-default1 input[name=id]").val(response[0]);
-                    $("#modal-default1 input[name=taikhoan]").val(response[1]);
-                    $("#modal-default1 input[name=matkhau]").val(response[2]);
-                    $("#modal-default1 input[name=vaitro]").val(response[3]);
-                    $("#modal-default1 input[name=sdt]").val(response[4]);
+                    $("#modal-default1 input[name=thoigian]").val(response[1]);
+                    $("#modal-default1 input[name=noidung]").val(response[2]);
+                    $("#modal-default1 input[name=id_lichhoithao]").val(response[3]);
                     $('.modal.fade.show').removeClass('show');
                     $('body').removeClass('model-open');
                 }

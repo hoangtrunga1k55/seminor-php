@@ -2,8 +2,8 @@
 $DIR_FILE = '/var/www/project-metting';
 include($DIR_FILE. '/Model/lichhoithao.php');
 include($DIR_FILE. '/class/Db.class.php');
-$lichhoithao = new lichhoithao();
-$result = $lichhoithao->getLichHoiThao();
+$user = new lichhoithao();
+$result = $user->getLichHoiThao();
 ?>
 <!DOCTYPE html>
 <html>
@@ -166,7 +166,7 @@ $result = $lichhoithao->getLichHoiThao();
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
-        <a href="index3.html" class="brand-link">
+        <a href="../index.php" class="brand-link">
             <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
                  style="opacity: .8">
             <span class="brand-text font-weight-light">AdminLTE 3</span>
@@ -210,21 +210,9 @@ $result = $lichhoithao->getLichHoiThao();
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../user/danhsach.php" class="nav-link">
+                                <a href="../user/ds.php" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Danh sach Nguoi Dung</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../user/them.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Them Nguoi Dung</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../user/sua.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Sua Nguoi Dung</p>
                                 </a>
                             </li>
                         </ul>
@@ -239,7 +227,7 @@ $result = $lichhoithao->getLichHoiThao();
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../khachhang/danhsach.php" class="nav-link">
+                                <a href="../khachhang/ds.php" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Danh Sach Khach Hang</p>
                                 </a>
@@ -256,21 +244,9 @@ $result = $lichhoithao->getLichHoiThao();
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../diengia/danhsach.php" class="nav-link">
+                                <a href="../diengia/ds.php" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Danh Sách Diên Gỉa</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../diengia/them.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Thêm Diễn Giar</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../diengia/sua.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Sửa Diễn Giả</p>
                                 </a>
                             </li>
                         </ul>
@@ -285,21 +261,9 @@ $result = $lichhoithao->getLichHoiThao();
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../danhgia/danhsach.php" class="nav-link">
+                                <a href="../danhgia/ds.php" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Danh Sách Đánh Giá</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../danhgia/them.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Thêm Đánh Giá</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../danhgia/sua.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Sửa Đánh Giá</p>
                                 </a>
                             </li>
                         </ul>
@@ -314,21 +278,9 @@ $result = $lichhoithao->getLichHoiThao();
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../lichhoithao/danhsach.php" class="nav-link">
+                                <a href="../lichhoithao/ds.php" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Danh Sách lịch hội thảo</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../lichhoithao/them.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Thêm lịch hội thảo</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../lichhoithao/sua.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Sửa lịch hội thảo</p>
                                 </a>
                             </li>
                         </ul>
@@ -343,21 +295,9 @@ $result = $lichhoithao->getLichHoiThao();
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../chitiet_lichhoithao/danhsach.php" class="nav-link">
+                                <a href="../chitiet_lichhoithao/ds.php" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Danh sách chi tiết lịch hội thảo</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../chitiet_lichhoithao/them.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Thêm chi tiết lịch hội thảo</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../chitiet_lichhoithao/sua.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Sửa Chi tiết lịch hội thảo</p>
                                 </a>
                             </li>
                         </ul>
@@ -395,9 +335,9 @@ $result = $lichhoithao->getLichHoiThao();
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
-                            <div class="card-header"><h3 class="card-title">Responsive Hover Table</h3>
+                            <div class="card-header"><h3 class="card-title">Danh Sách Người Dùng</h3>
                                 <div class="card-tools">
-                                    <div class="input-group input-group-sm" style="width: 150px;"><input type="text"
+                                    <div class="input-group input-group-sm" style="width: 150px;"><input type="text" id="myInput"
                                                                                                          name="table_search"
                                                                                                          class="form-control float-right"
                                                                                                          placeholder="Search">
@@ -408,21 +348,21 @@ $result = $lichhoithao->getLichHoiThao();
                                     </div>
                                 </div>
                             </div> <!-- /.card-header -->
-                            <div class="card-body table-responsive p-0">
+                            <div id="target-content" class="card-body table-responsive p-0">
                                 <table class="table table-hover text-nowrap">
                                     <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Tài khoản</th>
-                                        <th>Vai Trò</th>
-                                        <th>Số điện thoại</th>
+                                        <th>Tên</th>
+                                        <th>Mô Tả</th>
                                         <th>Status</th>
                                     </tr>
                                     </thead>
                                     <tbody> <?php
                                     foreach ($result as $row){
-                                        echo "<tr> <td>" . $row[0] . "</td> <td>" . $row[1] . "</td> <td>" . $row[2] . "</td><td><a href=" . "sua.php" . ">Edit</a>|<a href=" . "xoa" . ">Delete</a></td> </tr>";
-
+                                        echo "<tr id='row".$row[0]."'> <td>" . $row[0] . "</td> <td>" . $row[1] . "</td> <td>" . $row[2] . "</td> <td><button  type=\"button\" class=\"btn btn-default add\" data-toggle=\"modal\" data-target=\"#modal-default\">Thêm</button>|
+        <button type=\"button\" class=\"btn btn-default editUser\" data-toggle=\"modal\" data-target=\"#modal-default1\" data-id='".$row[0]."'>Sửa</button>
+|<button class='delete btn btn-default' data-id = ".$row[0].">Xóa</button></td> </tr>";
                                     }
                                     ?> </tbody>
                                 </table>
@@ -439,18 +379,12 @@ $result = $lichhoithao->getLichHoiThao();
                             </button>
                         </div>
                         <div class="modal-body">
-                            <input type="text" name="taikhoan" placeholder="nhập tài khoản">
+                            <input type="text" name="ten" placeholder="nhập tên hội thảo">
                         </div>
                         <div class="modal-body">
-                            <input type="password" name="matkhau" placeholder="nhập mật khẩu">
+                            <input type="text" name="mota" placeholder="nhập mô tả">
                         </div>
-                        <div class="modal-body">
-                            <label for="vaitro">Nhập Vai trò</label>
-                            <input id="vaitro"  type="checkbox" name="vaitro">
-                        </div>
-                        <div class="modal-body">
-                            <input type="text" name="sdt" placeholder="nhập số điện thoại">
-                        </div>
+
                         <div class="modal-footer justify-content-between">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             <button type="button" class="btn btn-primary add">Save changes</button>
@@ -473,17 +407,10 @@ $result = $lichhoithao->getLichHoiThao();
                             <input type="hidden" name="id">
                         </div>
                         <div class="modal-body">
-                            <input type="text" name="taikhoan" placeholder="nhập tài khoản">
+                            <input type="text" name="ten" placeholder="nhập tên hội thảo">
                         </div>
                         <div class="modal-body">
-                            <input type="password" name="matkhau" placeholder="nhập mật khẩu">
-                        </div>
-                        <div class="modal-body">
-                            <label for="vaitro">Nhập Vai trò</label>
-                            <input id="vaitro"  type="checkbox" name="vaitro">
-                        </div>
-                        <div class="modal-body">
-                            <input type="text" name="sdt" placeholder="nhập số điện thoại">
+                            <input type="text" name="mota" placeholder="nhập mô tả">
                         </div>
                         <div class="modal-footer justify-content-between">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -551,83 +478,76 @@ $result = $lichhoithao->getLichHoiThao();
 </body>
 <script>
     $(document).ready(function () {
+        $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#target-content tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
         $(document).on('click', '.delete', function(){
             var id = $(this).data('id');
-            $clicked_btn = $(this);
-            $.ajax({
-                url: '/project-metting/Controller/Admin/UserController/delete.php?id='+id,
-                type: 'GET',
-                data: {
-                    'delete': 1,
-                    'id': id,
-                },
-                success: function(response){
-                    $clicked_btn.parents("tr").remove();
-                }
-            });
+            var checkstr =  confirm('Bạn có chắc chắn muốn xóa');
+            if (checkstr ==true) {
+                console.log('lol');
+                $clicked_btn = $(this);
+                $.ajax({
+                    url: '/project-metting/Controller/Admin/HoiThaoController/delete.php',
+                    type: 'GET',
+                    data: {
+                        'delete': 1,
+                        'id': id,
+                    },
+                    success: function(response){
+                        console.log('huhu');
+                        $clicked_btn.parents("tr").remove();
+                    }
+                });
+            }
         });
 
         $(document).on('click', '.btn-primary.add', function(){
-            var taikhoan = $("input[name=taikhoan]").val();
-            var matkhau = $("input[name=matkhau]").val();
-            var vaitro = $("input[name=vaitro]").val();
-            var sdt = $("input[name=sdt]").val();
+            var ten = $("input[name=ten]").val();
+            var mota = $("input[name=mota]").val();
+
             $clicked_btn = $(this);
             $.ajax({
-                url: '/project-metting/Controller/Admin/UserController/add.php',
+                url: '/project-metting/Controller/Admin/HoiThaoController/add.php',
                 type: 'POST',
                 data: {
-                    'taikhoan': taikhoan,
-                    'matkhau': matkhau,
-                    'vaitro': vaitro,
-                    'sdt': sdt,
+                    'ten': ten,
+                    'mota': mota,
                 },
                 success: function(response){
-                    if (vaitro=="on"){
-                        vaitro=1;
-                    }
-                    else {
-                        vaitro =0;
-                    }
                     $('.modal.fade.show').removeAttr('aria-modal');
                     $('.modal.fade.show').attr('aria-hidden','true');
                     $('.modal.fade.show').removeClass('show');
                     $('body').removeClass('modal-open');
-                    $('tbody').append("<tr id=\"row"+response+"\"'> <td>"+response+"</td> <td>"+taikhoan+"</td> <td>"+vaitro+"</td> <td>"+sdt+"</td> <td><button type=\"button\" class=\"btn btn-default add\" data-toggle=\"modal\" data-target=\"#modal-default\">Add</button>|        <button type=\"button\" class=\"btn btn-default edit\" data-toggle=\"modal\" data-target=\"#modal-default\" data-id=\"6\">Edit</button>|<button class=\"delete btn btn-default\" data-id=\"6\">Delete</button></td> </tr>");
+                    $('tbody').append("<tr id=\"row"+response+"\"'> <td>"+response+"</td> <td>"+ten+"</td> <td>"+mota+"</td> <td><button type=\"button\" class=\"btn btn-default add\" data-toggle=\"modal\" data-target=\"#modal-default\">Add</button>|        <button type=\"button\" class=\"btn btn-default edit\" data-toggle=\"modal\" data-target=\"#modal-default\" data-id=\"6\">Edit</button>|<button class=\"delete btn btn-default\" data-id=\"6\">Delete</button></td> </tr>");
                 }
             });
         });
 
         $(document).on('click', '.btn-primary.edit', function(){
-            var taikhoan = $("#modal-default1 input[name=taikhoan]").val();
-            var matkhau = $("#modal-default1 input[name=matkhau]").val();
-            var vaitro = $("#modal-default1 input[name=vaitro]").val();
-            var sdt = $("#modal-default1 input[name=sdt]").val();
+            var ten = $("#modal-default1 input[name=ten]").val();
+            var mota = $("#modal-default1 input[name=mota]").val();
             var id =$("#modal-default1 input[name=id]").val();
             $clicked_btn = $(this);
             $.ajax({
-                url: '/project-metting/Controller/Admin/UserController/editUser.php',
+                url: '/project-metting/Controller/Admin/HoiThaoController/editUser.php',
                 type: 'POST',
                 data: {
                     'id':id,
-                    'taikhoan': taikhoan,
-                    'matkhau': matkhau,
-                    'vaitro': vaitro,
-                    'sdt': sdt,
+                    'ten': ten,
+                    'mota': mota,
+
                 },
                 success: function(response){
-                    if (vaitro=="on"){
-                        vaitro=1;
-                    }
-                    else {
-                        vaitro =0;
-                    }
                     $('.modal.fade.show').removeAttr('aria-modal');
                     $('.modal.fade.show').attr('aria-hidden','true');
                     $('.modal.fade.show').removeClass('show');
                     $('body').removeClass('modal-open');
                     $("#row"+id+"").remove();
-                    $('tbody').append("<tr id=\"row"+id+"\"'> <td>"+id+"</td> <td>"+taikhoan+"</td> <td>"+vaitro+"</td> <td>"+sdt+"</td> <td><button type=\"button\" class=\"btn btn-default add\" data-toggle=\"modal\" data-target=\"#modal-default\">Add</button>|        <button type=\"button\" class=\"btn btn-default edit\" data-toggle=\"modal\" data-target=\"#modal-default\" data-id=\"6\">Edit</button>|<button class=\"delete btn btn-default\" data-id=\"6\">Delete</button></td> </tr>");
+                    $('tbody').append("<tr id=\"row"+id+"\"'> <td>"+id+"</td> <td>"+ten+"</td> <td>"+mota+"</td><td><button type=\"button\" class=\"btn btn-default add\" data-toggle=\"modal\" data-target=\"#modal-default\">Add</button>|        <button type=\"button\" class=\"btn btn-default edit\" data-toggle=\"modal\" data-target=\"#modal-default\" data-id=\"6\">Edit</button>|<button class=\"delete btn btn-default\" data-id=\"6\">Delete</button></td> </tr>");
 
                 }
             });
@@ -635,27 +555,24 @@ $result = $lichhoithao->getLichHoiThao();
 
         $(document).on('click', '.editUser', function(){
             var id = $(this).data('id');
-            $("#modal-default1 input[name=taikhoan]").val(id);
             $clicked_btn = $(this);
             $.ajax({
-                url: '/project-metting/Controller/Admin/UserController/edit.php',
+                url: '/project-metting/Controller/Admin/HoiThaoController/edit.php',
                 type: 'GET',
                 data: {
                     'id': id,
                 },
                 success: function(response){
+                    console.log(response);
                     var response = JSON.parse(response);
                     $("#modal-default1 input[name=id]").val(response[0]);
-                    $("#modal-default1 input[name=taikhoan]").val(response[1]);
-                    $("#modal-default1 input[name=matkhau]").val(response[2]);
-                    $("#modal-default1 input[name=vaitro]").val(response[3]);
-                    $("#modal-default1 input[name=sdt]").val(response[4]);
+                    $("#modal-default1 input[name=ten]").val(response[1]);
+                    $("#modal-default1 input[name=mota]").val(response[2]);
                     $('.modal.fade.show').removeClass('show');
-                    $('body').removeClass('model-open');
+                    $('body').removeClass('modal-open');
                 }
             });
         });
-
     })
 </script>
 </html>

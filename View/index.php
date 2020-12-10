@@ -23,14 +23,12 @@ $result_lichhoithao = $lichhoithao->getLichHoiThao();
 $result_hoithao = $lichhoithao->getLichHoiThao();
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hội Thảo C2020</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -49,7 +47,8 @@ $result_hoithao = $lichhoithao->getLichHoiThao();
 
 </head>
 
-<body>
+<body style="position: relative">
+<button id="myBtn" class="button" type="button">Quay về</button>
 <section id="hero" class="background bg-cover">
     <div class="container-fluid">
         <ul class="socials-nav">
@@ -162,7 +161,8 @@ $result_hoithao = $lichhoithao->getLichHoiThao();
         <br>
         <br>
         <div class="row">
-            <div class="col-4"><img src="https://vivaco.com/demo/ventcamp/assets/img/imac-371x412.png" alt="" width="300px" height="auto"></div>
+            <div class="col-4"><img src="https://vivaco.com/demo/ventcamp/assets/img/imac-371x412.png" alt=""
+                                    width="300px" height="auto"></div>
 
             <div class="col-8 align-left">
                 <br>
@@ -170,7 +170,11 @@ $result_hoithao = $lichhoithao->getLichHoiThao();
                 <br>
                 <h6>Thông tin sự kiện</h6>
                 <p>
-                    CITA 2018 là hội thảo khoa học quốc gia về công nghệ thông tin và ứng dụng trong các lĩnh vực, được dự kiến tổ chức vào 28/09/2018 tại thành phố Đà Nẵng, Việt Nam. Mục tiêu của hội thảo là tạo ra diễn đàn nhằm quy tụ và kết nối các nhà nghiên cứu, các nhà khoa học và các chuyên gia trong nước và quốc tế tham gia công bố, thảo luận và chia sẽ về các vấn đề mới trong lĩnh vực công nghệ thông tin và ứng dụng.
+                    CITA 2018 là hội thảo khoa học quốc gia về công nghệ thông tin và ứng dụng trong các lĩnh vực, được
+                    dự kiến tổ chức vào 28/09/2018 tại thành phố Đà Nẵng, Việt Nam. Mục tiêu của hội thảo là tạo ra diễn
+                    đàn nhằm quy tụ và kết nối các nhà nghiên cứu, các nhà khoa học và các chuyên gia trong nước và quốc
+                    tế tham gia công bố, thảo luận và chia sẽ về các vấn đề mới trong lĩnh vực công nghệ thông tin và
+                    ứng dụng.
                 </p>
             </div>
         </div>
@@ -285,7 +289,7 @@ $result_hoithao = $lichhoithao->getLichHoiThao();
     <div class="container">
         <h2>
             Đăng Ký Ngay</h2>
-<!--        <small style="color: white;">No Spam - Only latest news, price and activity updates</small>-->
+        <!--        <small style="color: white;">No Spam - Only latest news, price and activity updates</small>-->
         <br>
         <br>
         <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
@@ -313,7 +317,7 @@ $result_hoithao = $lichhoithao->getLichHoiThao();
         <span class="icon fa fa-cutlery"></span>
         <h3 style="color: black;">Vé</h3>
         <p>
-            Rất nhiều bài phát biểu và các  <strong class="hightlight">hoạt động</strong>
+            Rất nhiều bài phát biểu và các <strong class="hightlight">hoạt động</strong>
         </p>
         <div class="row">
             <div class="col-4 border">
@@ -346,7 +350,7 @@ $result_hoithao = $lichhoithao->getLichHoiThao();
 <section id="feedback" class="section align-center" style="padding-top: 30px;">
     <div class="container">
         <h3 style="color: black;">Đánh Giá</h3>
-        <p>Mọi người<span class="hightlight">nói gì</span></p>
+        <p>Mọi người <span class="hightlight">nói gì</span></p>
         <div class="row">
             <?php
             foreach ($result_danhgia as $row) {
@@ -378,7 +382,10 @@ $result_hoithao = $lichhoithao->getLichHoiThao();
         <div class="row">
             <div class="col-4">
                 <h3>About C2020</h3>
-                <p>Mageplaza tự hào là một trong những công ty trẻ có tốc độ phát triển mạnh mẽ nhất trong lĩnh vực sản xuất và xuất khẩu phần mềm, cung cấp giải pháp Thương mại điên tử hoàn hảo cho các doanh nghiệp trên toàn thế giới! Mageplaza luôn nỗ lực để tạo ra những sản phẩm tốt nhất với những tính năng ưu việt, nổi trội, đáp ứng được yêu cầu ngày càng cao của khách hàng.
+                <p>Mageplaza tự hào là một trong những công ty trẻ có tốc độ phát triển mạnh mẽ nhất trong lĩnh vực sản
+                    xuất và xuất khẩu phần mềm, cung cấp giải pháp Thương mại điên tử hoàn hảo cho các doanh nghiệp trên
+                    toàn thế giới! Mageplaza luôn nỗ lực để tạo ra những sản phẩm tốt nhất với những tính năng ưu việt,
+                    nổi trội, đáp ứng được yêu cầu ngày càng cao của khách hàng.
 
                     Trải qua 6 năm hình thành và phát triển, Mageplaza đã đạt được những cột mốc đáng kinh ngạc như:
 
@@ -393,7 +400,8 @@ $result_hoithao = $lichhoithao->getLichHoiThao();
                 <p>Không gì có thể ngăn cản bạn</p>
                 <p>8 Sep 2015</p>
                 <p>
-                    Chúng tôi không phải là siêu anh hùng. Nhưng đôi khi, cuộc sống không diễn ra theo cách bạn đã định. #TI5
+                    Chúng tôi không phải là siêu anh hùng. Nhưng đôi khi, cuộc sống không diễn ra theo cách bạn đã định.
+                    #TI5
                     #BleedBlue</p>
                 <p>9 Sep 2020</p>
             </div>
@@ -432,5 +440,25 @@ $result_hoithao = $lichhoithao->getLichHoiThao();
     </div>
 </section>
 </body>
+<script>
+    $(document).ready(function () {
+        var mybutton = document.getElementById("myBtn");
+        window.onscroll = function () {
+            scrollFunction()
+        };
 
+        function scrollFunction() {
+            if (document.body.scrollTop > 850 || document.documentElement.scrollTop > 850) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        $("#myBtn").click(function () {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        })
+    });
+</script>
 </html>

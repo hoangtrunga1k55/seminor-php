@@ -68,6 +68,5 @@ class user{
         else{
             return false;
         }
-
     }
 }
