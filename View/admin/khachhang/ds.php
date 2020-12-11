@@ -1,9 +1,12 @@
 <?php
 $DIR_FILE = '/var/www/project-metting';
-include($DIR_FILE. '/Model/khachhang.php');
-include($DIR_FILE. '/class/Db.class.php');
+include($DIR_FILE . '/Model/khachhang.php');
+include($DIR_FILE . '/class/Db.class.php');
 $khachhang = new khachhang();
 $result = $khachhang->getKhachHang();
+$total_pages = $khachhang->numberOfKH();
+//get page
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,6 +37,11 @@ $result = $khachhang->getKhachHang();
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
+<style>
+    li.active a{
+        background: red;
+    }
+</style>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
@@ -166,7 +174,7 @@ $result = $khachhang->getKhachHang();
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
-        <a href="index3.html" class="brand-link">
+        <a href="../index.php" class="brand-link">
             <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
                  style="opacity: .8">
             <span class="brand-text font-weight-light">AdminLTE 3</span>
@@ -210,21 +218,9 @@ $result = $khachhang->getKhachHang();
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../user/danhsach.php" class="nav-link">
+                                <a href="../user/ds.php" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Danh sach Nguoi Dung</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../user/them.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Them Nguoi Dung</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../user/sua.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Sua Nguoi Dung</p>
                                 </a>
                             </li>
                         </ul>
@@ -239,7 +235,7 @@ $result = $khachhang->getKhachHang();
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../khachhang/danhsach.php" class="nav-link">
+                                <a href="../khachhang/ds.php" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Danh Sach Khach Hang</p>
                                 </a>
@@ -256,21 +252,9 @@ $result = $khachhang->getKhachHang();
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../diengia/danhsach.php" class="nav-link">
+                                <a href="../diengia/ds.php" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Danh Sách Diên Gỉa</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../diengia/them.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Thêm Diễn Giar</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../diengia/sua.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Sửa Diễn Giả</p>
                                 </a>
                             </li>
                         </ul>
@@ -285,21 +269,9 @@ $result = $khachhang->getKhachHang();
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../danhgia/danhsach.php" class="nav-link">
+                                <a href="../danhgia/ds.php" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Danh Sách Đánh Giá</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../danhgia/them.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Thêm Đánh Giá</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../danhgia/sua.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Sửa Đánh Giá</p>
                                 </a>
                             </li>
                         </ul>
@@ -314,21 +286,9 @@ $result = $khachhang->getKhachHang();
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../lichhoithao/danhsach.php" class="nav-link">
+                                <a href="../lichhoithao/ds.php" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Danh Sách lịch hội thảo</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../lichhoithao/them.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Thêm lịch hội thảo</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../lichhoithao/sua.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Sửa lịch hội thảo</p>
                                 </a>
                             </li>
                         </ul>
@@ -343,21 +303,9 @@ $result = $khachhang->getKhachHang();
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../chitiet_lichhoithao/danhsach.php" class="nav-link">
+                                <a href="../chitiet_lichhoithao/ds.php" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Danh sách chi tiết lịch hội thảo</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../chitiet_lichhoithao/them.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Thêm chi tiết lịch hội thảo</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../chitiet_lichhoithao/sua.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Sửa Chi tiết lịch hội thảo</p>
                                 </a>
                             </li>
                         </ul>
@@ -395,9 +343,10 @@ $result = $khachhang->getKhachHang();
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
-                            <div class="card-header"><h3 class="card-title">Responsive Hover Table</h3>
+                            <div class="card-header"><h3 class="card-title">Danh Sách Khách Hàng</h3>
                                 <div class="card-tools">
-                                    <div class="input-group input-group-sm" style="width: 150px;"><input type="text"
+                                    <div class="input-group input-group-sm" style="width: 150px;">
+                                        <input type="text" id="myInput"
                                                                                                          name="table_search"
                                                                                                          class="form-control float-right"
                                                                                                          placeholder="Search">
@@ -408,29 +357,27 @@ $result = $khachhang->getKhachHang();
                                     </div>
                                 </div>
                             </div> <!-- /.card-header -->
-                            <div class="card-body table-responsive p-0">
-                                <table class="table table-hover text-nowrap">
-                                    <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Tài khoản</th>
-                                        <th>Vai Trò</th>
-                                        <th>Số điện thoại</th>
-                                        <th>Status</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody> <?php
-                                    foreach ($result as $row){
-                                        echo "<tr> <td>" . $row[0] . "</td> 
-                                                        <td>" . $row[1] . "</td> 
-                                                        <td>" . $row[2] . "</td> 
-                                                        <td>" . $row[3] . "</td> 
-                                                        <td>" . $row[4] . "</td> 
-                                                        <td>" . $row[5] . "</td> 
-                                                        <td><a href=" . "sua.php" . ">Edit</a>|<span class='delete' data-id='".$row[0]."' >Delete</span></td> </tr>";
-                                    }
-                                    ?> </tbody>
-                                </table>
+                            <div id="target-content" class="card-body table-responsive p-0">
+<!--                                <table class="table table-hover text-nowrap">-->
+<!--                                    <thead>-->
+<!--                                    <tr>-->
+<!--                                        <th>ID</th>-->
+<!--                                        <th>Tên</th>-->
+<!--                                        <th>Email</th>-->
+<!--                                        <th>Số điện thoại</th>-->
+<!--                                        <th>Xe Đưa Đón</th>-->
+<!--                                        <th>Khách Sạn</th>-->
+<!--                                        <th>Status</th>-->
+<!--                                    </tr>-->
+<!--                                    </thead>-->
+<!--                                    <tbody> --><?php
+//                                    foreach ($result as $row) {
+//                                        echo "<tr id='row" . $row[0] . "'> <td>" . $row[0] . "</td> <td>" . $row[1] . "</td> <td>" . $row[2] . "</td> <td>" . $row[3] . "</td> <td>" . $row[4] . "</td><td>" . $row[5] . "</td><td><button  type=\"button\" class=\"btn btn-default add\" data-toggle=\"modal\" data-target=\"#modal-default\">Add</button>|
+//        <button type=\"button\" class=\"btn btn-default editUser\" data-toggle=\"modal\" data-target=\"#modal-default1\" data-id='" . $row[0] . "'>Edit</button>
+//|<button class='delete btn btn-default' data-id = " . $row[0] . ">Delete</button></td> </tr>";
+//                                    }
+//                                    ?><!-- </tbody>-->
+<!--                                </table>-->
                             </div> <!-- /.card-body --> </div> <!-- /.card --> </div>
                 </div>
             </div>
@@ -444,18 +391,23 @@ $result = $khachhang->getKhachHang();
                             </button>
                         </div>
                         <div class="modal-body">
-                            <input type="text" name="taikhoan" placeholder="nhập tài khoản">
+                            <input type="text" name="ten" placeholder="nhập tên">
                         </div>
                         <div class="modal-body">
-                            <input type="password" name="matkhau" placeholder="nhập mật khẩu">
-                        </div>
-                        <div class="modal-body">
-                            <label for="vaitro">Nhập Vai trò</label>
-                            <input id="vaitro"  type="checkbox" name="vaitro">
+                            <input type="text" name="email" placeholder="nhập email">
                         </div>
                         <div class="modal-body">
                             <input type="text" name="sdt" placeholder="nhập số điện thoại">
                         </div>
+                        <div class="modal-body">
+                            <label for="xeduadon">xeduadon</label>
+                            <input id="xeduadon" type="checkbox" name="xeduadon">
+                        </div>
+                        <div class="modal-body">
+                            <label for="khachsan">khachsan</label>
+                            <input id="khachsan" type="checkbox" name="khachsan">
+                        </div>
+
                         <div class="modal-footer justify-content-between">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             <button type="button" class="btn btn-primary add">Save changes</button>
@@ -478,17 +430,21 @@ $result = $khachhang->getKhachHang();
                             <input type="hidden" name="id">
                         </div>
                         <div class="modal-body">
-                            <input type="text" name="taikhoan" placeholder="nhập tài khoản">
+                            <input type="text" name="ten" placeholder="nhập tên">
                         </div>
                         <div class="modal-body">
-                            <input type="password" name="matkhau" placeholder="nhập mật khẩu">
-                        </div>
-                        <div class="modal-body">
-                            <label for="vaitro">Nhập Vai trò</label>
-                            <input id="vaitro"  type="checkbox" name="vaitro">
+                            <input type="text" name="email" placeholder="nhập email">
                         </div>
                         <div class="modal-body">
                             <input type="text" name="sdt" placeholder="nhập số điện thoại">
+                        </div>
+                        <div class="modal-body">
+                            <label for="xeduadon">xeduadon</label>
+                            <input id="xeduadon" type="checkbox" name="xeduadon">
+                        </div>
+                        <div class="modal-body">
+                            <label for="khachsan">khachsan</label>
+                            <input id="khachsan" type="checkbox" name="khachsan">
                         </div>
                         <div class="modal-footer justify-content-between">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -500,6 +456,25 @@ $result = $khachhang->getKhachHang();
                 <!-- /.modal-dialog -->
             </div>
         </section>
+        <ul class="pagination" style="margin-top: 40px">
+            <?php
+            if(!empty($total_pages)){
+                for($i=1; $i<= $total_pages; $i++){
+                    if($i == 1){
+                        ?>
+                        <li class="pageitem active" id="<?php echo $i;?>"><a href="JavaScript:Void(0);" data-id="<?php echo $i;?>" class="page-link" ><?php echo $i;?></a></li>
+                        <?php
+                    }
+                    else{
+                        ?>
+                        <li class="pageitem" id="<?php echo $i;?>"><a href="JavaScript:Void(0);" class="page-link" data-id="<?php echo $i;?>"><?php echo $i;?></a></li>
+                        <?php
+                    }
+                }
+            }
+            ?>
+        </ul>
+
     </div>
     <!-- /.content-wrapper -->
     <footer class="main-footer">
@@ -555,106 +530,153 @@ $result = $khachhang->getKhachHang();
 <script src="../../dist/js/demo.js"></script>
 </body>
 <script>
-    $(document).ready(function () {
-        $(document).on('click', '.delete', function(){
-            var id = $(this).data('id');
-            $clicked_btn = $(this);
+    $(window).ready(function () {
+        $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#target-content tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+
+        $("#target-content").load("/project-metting/Controller/Admin/KhachHangController/pagination.php?page=1");
+        $(".page-link").click(function(){
+            var id = $(this).attr("data-id");
+            var select_id = $(this).parent().attr("id");
             $.ajax({
-                url: '/project-metting/Controller/Admin/UserController/delete.php?id='+id,
-                type: 'GET',
+                url: "/project-metting/Controller/Admin/KhachHangController/pagination.php",
+                type: "GET",
                 data: {
-                    'delete': 1,
-                    'id': id,
+                    page : id
                 },
-                success: function(response){
-                    $clicked_btn.parents("tr").remove();
+                cache: false,
+                success: function(dataResult){
+                    $("#target-content").html(dataResult);
+                    $(".pageitem").removeClass("active");
+                    $("#"+select_id).addClass("active");
+
                 }
             });
         });
 
-        $(document).on('click', '.btn-primary.add', function(){
-            var taikhoan = $("input[name=taikhoan]").val();
-            var matkhau = $("input[name=matkhau]").val();
-            var vaitro = $("input[name=vaitro]").val();
+        $(document).on('click', '.delete', function () {
+            var checkstr = confirm('Bạn có chắc chắn muốn xóa');
+            if (checkstr == true) {
+                var id = $(this).data('id');
+                $clicked_btn = $(this);
+                $.ajax({
+                    url: '/project-metting/Controller/Admin/KhachHangController/delete.php',
+                    type: 'GET',
+                    data: {
+                        'delete': 1,
+                        'id': id,
+                    },
+                    success: function (response) {
+                        $clicked_btn.parents("tr").remove();
+                    }
+                });
+            } else {
+                return false;
+            }
+
+        });
+
+        $(document).on('click', '.btn-primary.add', function () {
+            var ten = $("input[name=ten]").val();
+            var email = $("input[name=email]").val();
             var sdt = $("input[name=sdt]").val();
+            var xeduadon = $("input[name=xeduadon]").val();
+            var khachsan = $("input[name=khachsan]").val();
             $clicked_btn = $(this);
             $.ajax({
-                url: '/project-metting/Controller/Admin/UserController/add.php',
+                url: '/project-metting/Controller/Admin/KhachHangController/add.php',
                 type: 'POST',
                 data: {
-                    'taikhoan': taikhoan,
-                    'matkhau': matkhau,
-                    'vaitro': vaitro,
+                    'ten': ten,
+                    'email': email,
+                    'xeduadon': xeduadon,
+                    'khachsan': khachsan,
                     'sdt': sdt,
                 },
-                success: function(response){
-                    if (vaitro=="on"){
-                        vaitro=1;
+                success: function (response) {
+                    if (xeduadon == "on") {
+                        xeduadon = "Có";
+                    } else {
+                        xeduadon = "Không";
                     }
-                    else {
-                        vaitro =0;
+                    if (khachsan == "on") {
+                        khachsan = "Có";
+                    } else {
+                        khachsan = "Không";
                     }
                     $('.modal.fade.show').removeAttr('aria-modal');
-                    $('.modal.fade.show').attr('aria-hidden','true');
+                    $('.modal.fade.show').attr('aria-hidden', 'true');
                     $('.modal.fade.show').removeClass('show');
                     $('body').removeClass('modal-open');
-                    $('tbody').append("<tr id=\"row"+response+"\"'> <td>"+response+"</td> <td>"+taikhoan+"</td> <td>"+vaitro+"</td> <td>"+sdt+"</td> <td><button type=\"button\" class=\"btn btn-default add\" data-toggle=\"modal\" data-target=\"#modal-default\">Add</button>|        <button type=\"button\" class=\"btn btn-default edit\" data-toggle=\"modal\" data-target=\"#modal-default\" data-id=\"6\">Edit</button>|<button class=\"delete btn btn-default\" data-id=\"6\">Delete</button></td> </tr>");
+                    $('tbody').append("<tr id=\"row" + response + "\"'> <td>" + response + "</td> <td>" + ten + "</td> <td>" + email + "</td><td>" + sdt + "</td> <td>" + xeduadon + "</td><td>" + khachsan + "</td> <td><button type=\"button\" class=\"btn btn-default add\" data-toggle=\"modal\" data-target=\"#modal-default\">Thêm</button>|        <button type=\"button\" class=\"btn btn-default edit\" data-toggle=\"modal\" data-target=\"#modal-default\" data-id=\"6\">Sửa</button>|<button class=\"delete btn btn-default\" data-id=\"6\">Xóa</button></td> </tr>");
                 }
             });
         });
 
-        $(document).on('click', '.btn-primary.edit', function(){
-            var taikhoan = $("#modal-default1 input[name=taikhoan]").val();
-            var matkhau = $("#modal-default1 input[name=matkhau]").val();
-            var vaitro = $("#modal-default1 input[name=vaitro]").val();
+        $(document).on('click', '.btn-primary.edit', function () {
+            var ten = $("#modal-default1 input[name=ten]").val();
+            var email = $("#modal-default1 input[name=email]").val();
+            var xeduadon = $("#modal-default1 input[name=xeduadon]").val();
+            var khachsan = $("#modal-default1 input[name=khachsan]").val();
             var sdt = $("#modal-default1 input[name=sdt]").val();
-            var id =$("#modal-default1 input[name=id]").val();
+            var id = $("#modal-default1 input[name=id]").val();
+            if (xeduadon == "on") {
+                xeduadon = 1;
+            } else {
+                xeduadon = 0;
+            }
+            if (khachsan == "on") {
+                khachsan = 1;
+            } else {
+                khachsan = 0;
+            }
             $clicked_btn = $(this);
             $.ajax({
-                url: '/project-metting/Controller/Admin/UserController/editUser.php',
+                url: '/project-metting/Controller/Admin/KhachHangController/editKH.php',
                 type: 'POST',
                 data: {
-                    'id':id,
-                    'taikhoan': taikhoan,
-                    'matkhau': matkhau,
-                    'vaitro': vaitro,
+                    'id': id,
+                    'ten': ten,
+                    'email': email,
+                    'xeduadon': xeduadon,
+                    'khachsan': khachsan,
                     'sdt': sdt,
                 },
-                success: function(response){
-                    if (vaitro=="on"){
-                        vaitro=1;
-                    }
-                    else {
-                        vaitro =0;
-                    }
+                success: function (response) {
+                    console.log(response);
                     $('.modal.fade.show').removeAttr('aria-modal');
-                    $('.modal.fade.show').attr('aria-hidden','true');
+                    $('.modal.fade.show').attr('aria-hidden', 'true');
                     $('.modal.fade.show').removeClass('show');
                     $('body').removeClass('modal-open');
-                    $("#row"+id+"").remove();
-                    $('tbody').append("<tr id=\"row"+id+"\"'> <td>"+id+"</td> <td>"+taikhoan+"</td> <td>"+vaitro+"</td> <td>"+sdt+"</td> <td><button type=\"button\" class=\"btn btn-default add\" data-toggle=\"modal\" data-target=\"#modal-default\">Add</button>|        <button type=\"button\" class=\"btn btn-default edit\" data-toggle=\"modal\" data-target=\"#modal-default\" data-id=\"6\">Edit</button>|<button class=\"delete btn btn-default\" data-id=\"6\">Delete</button></td> </tr>");
+                    $("#row" + id + "").remove();
+                    $('tbody').append("<tr id=\"row" + id + "\"'> <td>" + id + "</td> <td>" + ten + "</td> <td>" + email + "</td> <td>" + sdt + "</td><td>" + xeduadon + "</td><td>" + khachsan + "</td> <td><button type=\"button\" class=\"btn btn-default add\" data-toggle=\"modal\" data-target=\"#modal-default\">Add</button>|        <button type=\"button\" class=\"btn btn-default edit\" data-toggle=\"modal\" data-target=\"#modal-default\" data-id=\"6\">Edit</button>|<button class=\"delete btn btn-default\" data-id=\"6\">Delete</button></td> </tr>");
 
                 }
             });
         });
 
-        $(document).on('click', '.editUser', function(){
+        $(document).on('click', '.editUser', function () {
             var id = $(this).data('id');
             $("#modal-default1 input[name=taikhoan]").val(id);
             $clicked_btn = $(this);
             $.ajax({
-                url: '/project-metting/Controller/Admin/UserController/edit.php',
+                url: '/project-metting/Controller/Admin/KhachHangController/edit.php',
                 type: 'GET',
                 data: {
                     'id': id,
                 },
-                success: function(response){
+                success: function (response) {
                     var response = JSON.parse(response);
                     $("#modal-default1 input[name=id]").val(response[0]);
-                    $("#modal-default1 input[name=taikhoan]").val(response[1]);
-                    $("#modal-default1 input[name=matkhau]").val(response[2]);
-                    $("#modal-default1 input[name=vaitro]").val(response[3]);
-                    $("#modal-default1 input[name=sdt]").val(response[4]);
+                    $("#modal-default1 input[name=ten]").val(response[1]);
+                    $("#modal-default1 input[name=email]").val(response[2]);
+                    $("#modal-default1 input[name=sdt]").val(response[3]);
+                    $("#modal-default1 input[name=xeduadon]").val(response[4]);
+                    $("#modal-default1 input[name=khachsan]").val(response[5]);
                     $('.modal.fade.show').removeClass('show');
                     $('body').removeClass('model-open');
                 }

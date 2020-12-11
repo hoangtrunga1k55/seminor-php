@@ -166,7 +166,7 @@ $result = $user->getAllUser();
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
-        <a href="index3.html" class="brand-link">
+        <a href="../index.php" class="brand-link">
             <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
                  style="opacity: .8">
             <span class="brand-text font-weight-light">AdminLTE 3</span>
@@ -215,18 +215,6 @@ $result = $user->getAllUser();
                                     <p>Danh sach Nguoi Dung</p>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="../user/them.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Them Nguoi Dung</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../user/sua.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Sua Nguoi Dung</p>
-                                </a>
-                            </li>
                         </ul>
                     </li>
                     <li class="nav-item has-treeview">
@@ -261,18 +249,6 @@ $result = $user->getAllUser();
                                     <p>Danh Sách Diên Gỉa</p>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="../diengia/them.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Thêm Diễn Giar</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../diengia/sua.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Sửa Diễn Giả</p>
-                                </a>
-                            </li>
                         </ul>
                     </li>
                     <li class="nav-item has-treeview">
@@ -288,18 +264,6 @@ $result = $user->getAllUser();
                                 <a href="../danhgia/ds.php" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Danh Sách Đánh Giá</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../danhgia/them.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Thêm Đánh Giá</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../danhgia/sua.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Sửa Đánh Giá</p>
                                 </a>
                             </li>
                         </ul>
@@ -319,18 +283,6 @@ $result = $user->getAllUser();
                                     <p>Danh Sách lịch hội thảo</p>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="../lichhoithao/them.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Thêm lịch hội thảo</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../lichhoithao/sua.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Sửa lịch hội thảo</p>
-                                </a>
-                            </li>
                         </ul>
                     </li>
                     <li class="nav-item has-treeview">
@@ -346,18 +298,6 @@ $result = $user->getAllUser();
                                 <a href="../chitiet_lichhoithao/ds.php" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Danh sách chi tiết lịch hội thảo</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../chitiet_lichhoithao/them.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Thêm chi tiết lịch hội thảo</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../chitiet_lichhoithao/sua.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Sửa Chi tiết lịch hội thảo</p>
                                 </a>
                             </li>
                         </ul>
@@ -395,9 +335,9 @@ $result = $user->getAllUser();
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
-                            <div class="card-header"><h3 class="card-title">Responsive Hover Table</h3>
+                            <div class="card-header"><h3 class="card-title">Danh Sách Người Dùng</h3>
                                 <div class="card-tools">
-                                    <div class="input-group input-group-sm" style="width: 150px;"><input type="text"
+                                    <div class="input-group input-group-sm" style="width: 150px;"><input type="text" id="myInput"
                                                                                                          name="table_search"
                                                                                                          class="form-control float-right"
                                                                                                          placeholder="Search">
@@ -408,7 +348,7 @@ $result = $user->getAllUser();
                                     </div>
                                 </div>
                             </div> <!-- /.card-header -->
-                            <div class="card-body table-responsive p-0">
+                            <div id="target-content" class="card-body table-responsive p-0">
                                 <table class="table table-hover text-nowrap">
                                     <thead>
                                     <tr>
@@ -421,9 +361,9 @@ $result = $user->getAllUser();
                                     </thead>
                                     <tbody> <?php
                                     foreach ($result as $row){
-                                        echo "<tr id='row".$row[0]."'> <td>" . $row[0] . "</td> <td>" . $row[1] . "</td> <td>" . $row[3] . "</td> <td>" . $row[4] . "</td> <td><button  type=\"button\" class=\"btn btn-default add\" data-toggle=\"modal\" data-target=\"#modal-default\">Add</button>|
-        <button type=\"button\" class=\"btn btn-default editUser\" data-toggle=\"modal\" data-target=\"#modal-default1\" data-id='".$row[0]."'>Edit</button>
-|<button class='delete btn btn-default' data-id = ".$row[0].">Delete</button></td> </tr>";
+                                        echo "<tr id='row".$row[0]."'> <td>" . $row[0] . "</td> <td>" . $row[1] . "</td> <td>" . $row[3] . "</td> <td>" . $row[4] . "</td> <td><button  type=\"button\" class=\"btn btn-default add\" data-toggle=\"modal\" data-target=\"#modal-default\">Thêm</button>|
+        <button type=\"button\" class=\"btn btn-default editUser\" data-toggle=\"modal\" data-target=\"#modal-default1\" data-id='".$row[0]."'>Sửa</button>
+|<button class='delete btn btn-default' data-id = ".$row[0].">Xóa</button></td> </tr>";
                                     }
                                 ?> </tbody>
                                 </table>
@@ -552,20 +492,30 @@ $result = $user->getAllUser();
 </body>
 <script>
     $(document).ready(function () {
+        $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#target-content tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+
         $(document).on('click', '.delete', function(){
             var id = $(this).data('id');
-            $clicked_btn = $(this);
-            $.ajax({
-                url: '/project-metting/Controller/Admin/UserController/delete.php?id='+id,
-                type: 'GET',
-                data: {
-                    'delete': 1,
-                    'id': id,
-                },
-                success: function(response){
-                    $clicked_btn.parents("tr").remove();
-                }
-            });
+            var checkstr =  confirm('Bạn có chắc chắn muốn xóa');
+            if (checkstr ==true) {
+                $clicked_btn = $(this);
+                $.ajax({
+                    url: '/project-metting/Controller/Admin/UserController/delete.php?id='+id,
+                    type: 'GET',
+                    data: {
+                        'delete': 1,
+                        'id': id,
+                    },
+                    success: function(response){
+                        $clicked_btn.parents("tr").remove();
+                    }
+                });
+            }
         });
 
         $(document).on('click', '.btn-primary.add', function(){
@@ -628,7 +578,7 @@ $result = $user->getAllUser();
                     $('.modal.fade.show').removeClass('show');
                     $('body').removeClass('modal-open');
                     $("#row"+id+"").remove();
-                    $('tbody').append("<tr id=\"row"+id+"\"'> <td>"+id+"</td> <td>"+taikhoan+"</td> <td>"+vaitro+"</td> <td>"+sdt+"</td> <td><button type=\"button\" class=\"btn btn-default add\" data-toggle=\"modal\" data-target=\"#modal-default\">Add</button>|        <button type=\"button\" class=\"btn btn-default edit\" data-toggle=\"modal\" data-target=\"#modal-default\" data-id=\"6\">Edit</button>|<button class=\"delete btn btn-default\" data-id=\"6\">Delete</button></td> </tr>");
+                    $('tbody').append("<tr id=\"row"+id+"\"'> <td>"+id+"</td> <td>"+taikhoan+"</td> <td>"+vaitro+"</td> <td>"+sdt+"</td> <td><button type=\"button\" class=\"btn btn-default add\" data-toggle=\"modal\" data-target=\"#modal-default\">Thêm</button>|        <button type=\"button\" class=\"btn btn-default edit\" data-toggle=\"modal\" data-target=\"#modal-default\" data-id=\"6\">Sửa</button>|<button class=\"delete btn btn-default\" data-id=\"6\">Xóa</button></td> </tr>");
 
                 }
             });
